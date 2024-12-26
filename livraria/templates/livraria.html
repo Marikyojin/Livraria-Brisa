@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Livraria Brisa</title>
+</head>
+<body>
+    <div>
+    <h1>Bem vindos á Livraria Brisa!</h1>
+    <div class="grid">
+        <div>
+            {% for livro in livros %}
+            <a href="">
+ <!---          <img src="" alt=""> -->
+                <span><strong>{{livro.get_nome()}}</strong></span><br>
+                <span>Autor(a): {{livro.get_autor()}}</span><br>
+                <span>Editora: {{livro.get_editora()}}</span><br>
+                <span>Ano: {{livro.get_ano()}}</span><br>
+                {% if is_livro_fisico(livro) %}
+                    <span>Estado: {{ livro.get_estado() }}</span><br>
+                {% endif %}
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    </div>    
+</body>
+</html>
